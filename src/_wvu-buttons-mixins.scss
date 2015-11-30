@@ -1,0 +1,38 @@
+@mixin wvu-button-color($wvu-button-color, $wvu-button-hover-font-color) {
+  color: $wvu-button-color;
+  border: 2px solid $wvu-button-color;
+
+  &:visited {
+    color: $wvu-button-color;
+  }
+
+  &:hover {
+    background: $wvu-button-color;
+    color: $wvu-button-hover-font-color;
+    border: 2px solid $wvu-button-color;
+  }
+}
+
+@mixin wvu-button-color-fill($wvu-button-color, $wvu-button-hover-font-color, $wvu-button-hover-background-color: transparent){
+  background: $wvu-button-color;
+  border: 2px solid $wvu-button-color;
+
+  @if(lightness($wvu-button-color) > 50) {
+    color: $wvu-black !important;
+
+    &:visited {
+      color: $wvu-white;
+    }
+  }
+
+  &:hover {
+    background: $wvu-button-hover-background-color;
+    color: $wvu-button-hover-font-color !important;
+
+    @if ($wvu-button-hover-background-color == transparent) {
+      border: 2px solid $wvu-button-hover-font-color;
+    } @else {
+      border: 2px solid $wvu-button-hover-background-color;
+    }
+  }
+}

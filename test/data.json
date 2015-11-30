@@ -1,0 +1,24 @@
+{
+  "wvu_config": { },
+  "wvu_buttons_variations": [
+    "wvu-button--wvu-gold",
+    "wvu-button--wvu-blue",
+    "wvu-button--wvu-black",
+    "wvu-button--wvu-white",
+    "wvu-button--pms-432-c",
+    "wvu-button--pms-warm-gray-11",
+    "wvu-button--pms-warm-gray-7",
+    "wvu-button--pms-warm-gray-3",
+    "wvu-button--pms-286-c",
+    "wvu-button--pms-300-c",
+    "wvu-button--pms-629-c",
+    "wvu-button--pms-7554-c",
+    "wvu-button--pms-7557-c",
+    "wvu-button--pms-144-c",
+    "wvu-button--pms-7476-c",
+    "wvu-button--pms-5625-c",
+    "wvu-button--pms-558-c",
+    "wvu-button--pms-180-c",
+    "wvu-button--pms-166-c"
+  ]
+}

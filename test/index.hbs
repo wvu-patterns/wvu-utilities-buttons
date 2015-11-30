@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WVU Pattern Library - Utility Buttons</title>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      .wvu-test-span {
+        display: inline-block;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> WVU Button Tests </h1>
+    <h2> Button</h2>
+    {{#wvu_buttons_variations}}
+      <a class="wvu-button {{.}}">Button</a>
+    {{/wvu_buttons_variations}}
+
+    <h3>On dark background</h3>
+    <div class="wvu-u-wvu-black background wvu-test-span">
+      {{#wvu_buttons_variations}}
+        <a class="wvu-button {{.}}">Button</a>
+      {{/wvu_buttons_variations}}
+    </div>
+
+
+    <h2> Button Fills</h2>
+    {{#wvu_buttons_variations}}
+      <a class="wvu-button {{.}}-fill">Button</a>
+    {{/wvu_buttons_variations}}
+
+
+    <h3>On dark background</h3>
+    <div class="wvu-u-wvu-black background wvu-test-span">
+      {{#wvu_buttons_variations}}
+        <a class="wvu-button {{.}}-fill">Button</a>
+      {{/wvu_buttons_variations}}
+    </div>
+
+  </body>
+</html>
