@@ -41,7 +41,7 @@ var gulp = require('gulp'),
 
   gulp.task('compile-handlebars', function () {
 
-    var templateData = JSON.parse(fs.readFileSync('./test/data.json'));
+    var templateData = JSON.parse(fs.readFileSync('./data/_wvu-buttons.json'));
 
     var options = {};
 
