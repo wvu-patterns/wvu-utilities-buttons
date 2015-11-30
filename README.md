@@ -5,7 +5,7 @@
 Use [Bower](http://bower.io/) to install this module.
 
 ```bash
-$ bower install --save wvu-utilities-typography
+$ bower install --save wvu-utilities-buttons
 ```
 
 ## Dependencies
