@@ -8,12 +8,12 @@
 
   &:hover {
     background: $wvu-button-color;
-    color: $wvu-button-hover-font-color;
     border: 2px solid $wvu-button-color;
+    color: $wvu-button-hover-font-color;
   }
 }
 
-@mixin wvu-button-color-fill($wvu-button-color, $wvu-button-hover-font-color, $wvu-button-hover-background-color: transparent){
+@mixin wvu-button-color-fill($wvu-button-color, $wvu-button-hover-font-color, $wvu-button-hover-background-color: transparent) {
   background: $wvu-button-color;
   border: 2px solid $wvu-button-color;
 
