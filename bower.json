@@ -14,6 +14,7 @@
   "description": "WVU Pattern Library -- Buttons Utility",
   "license": "MIT",
   "main": [
+    "src/scss/_wvu-buttons-mixins.scss",
     "src/scss/_wvu-buttons-variables.scss",
     "src/scss/_wvu-buttons.scss"
   ],
