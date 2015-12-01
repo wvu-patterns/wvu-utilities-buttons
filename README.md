@@ -45,7 +45,8 @@ Requires:
 #### Installation
 
 ```bash
-$ cd {install-dir}/wvu-utilities-buttons
+$ git clone https://github.com/wvu-patterns/wvu-utilities-buttons.git
+$ cd wvu-utilities-buttons
 $ gem install bundler
 $ bundle install
 $ npm install
