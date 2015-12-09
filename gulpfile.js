@@ -44,6 +44,13 @@ gulp.task('compile-handlebars', function () {
 
   var templateData = JSON.parse(fs.readFileSync('./data/_wvu-buttons.json'));
 
+  // get variables json
+  var variableData = JSON.parse(fs.readFileSync('./bower_components/wvu-utilities-variables/data/_wvu-variables.json'));
+
+  // merge json
+  templateData.wvu_variables = variableData.wvu_variables;
+
+
   var options = {};
 
   return gulp.src('./test/index.hbs')

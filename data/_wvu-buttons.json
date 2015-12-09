@@ -1,6 +1,6 @@
 {
   "wvu_config": { },
-  "wvu_buttons_variations": [
+  "wvu_buttons": [
     "wvu-button--wvu-gold",
     "wvu-button--wvu-blue",
     "wvu-button--wvu-black",

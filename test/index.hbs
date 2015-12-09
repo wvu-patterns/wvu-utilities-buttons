@@ -5,46 +5,44 @@
     <meta content='width=device-width, initial-scale=1' name='viewport'>
 
     <link href="css/styles.css" rel="stylesheet" />
-    <style>
-      .wvu-test-span {
-        display: inline-block;
-        padding: 5px;
-      }
-    </style>
+
   </head>
   <body>
-    <h1> WVU Button Tests </h1>
-    <h2> Button</h2>
-    {{#wvu_buttons_variations}}
-      <a class="wvu-button {{.}}">Button</a>
-    {{/wvu_buttons_variations}}
+    <h1>WVU Button Tests</h1>
+    <div class="button-column">
+      <h2>Buttons</h2>
+      <div class="wvu-test-span">
+        {{#wvu_buttons}}
+          <a class="wvu-button {{.}}">Button</a>
+        {{/wvu_buttons}}
+      </div>
 
-    <h3>On dark background</h3>
-    <div class="wvu-u-wvu-black background wvu-test-span">
-      {{#wvu_buttons_variations}}
-        <a class="wvu-button {{.}}">Button</a>
-      {{/wvu_buttons_variations}}
+      {{#wvu_variables.colors}}
+      <h4>{{.}}</h4>
+      <div class="wvu-u-{{.}} background wvu-test-span">
+        {{#../wvu_buttons}}
+          <a class="wvu-button {{.}}">Button</a>
+        {{/../wvu_buttons}}
+      </div>
+      {{/wvu_variables.colors}}
     </div>
 
+    <div class="button-column">
+      <h2> Button Fills</h2>
+      <div class="wvu-test-span">
+        {{#wvu_buttons}}
+          <a class="wvu-button {{.}}-fill">Button</a>
+        {{/wvu_buttons}}
+      </div>
 
-    <h2> Button Fills</h2>
-    {{#wvu_buttons_variations}}
-      <a class="wvu-button {{.}}-fill">Button</a>
-    {{/wvu_buttons_variations}}
-
-
-    <h3>On dark background</h3>
-    <div class="wvu-u-wvu-black background wvu-test-span">
-      {{#wvu_buttons_variations}}
-        <a class="wvu-button {{.}}-fill">Button</a>
-      {{/wvu_buttons_variations}}
-    </div>
-
-    <h3>On dark background</h3>
-    <div class="wvu-u-wvu-blue background wvu-test-span">
-      {{#wvu_buttons_variations}}
-        <a class="wvu-button {{.}}-fill">Button</a>
-      {{/wvu_buttons_variations}}
+      {{#wvu_variables.colors}}
+      <h4>{{.}}</h4>
+      <div class="wvu-u-{{.}} background wvu-test-span">
+        {{#../wvu_buttons}}
+          <a class="wvu-button {{.}}-fill">Button</a>
+        {{/../wvu_buttons}}
+      </div>
+      {{/wvu_variables.colors}}
     </div>
 
   </body>
