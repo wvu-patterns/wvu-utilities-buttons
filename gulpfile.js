@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     prefix = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
     handlebars = require('gulp-compile-handlebars'),
+    todo = require('gulp-todo'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload;
 
@@ -21,6 +22,21 @@ gulp.task('browser-sync', function() {
     logConnections: true,
     logSnippet: false
   });
+});
+
+gulp.task('todo', function(){
+  return gulp.src([
+    './**/*.scss',
+    '!./bower_components/**/*.scss',
+    './**/*.html',
+    '!./bower_components/**/*.html',
+    './**/*.hbs',
+    '!./bower_components/**/*.hbs',
+    './**/*.haml',
+    '!./bower_components/**/*.haml'
+  ])
+  .pipe(todo())
+  .pipe(gulp.dest('./'));
 });
 
 gulp.task('compile-scss', function(){
@@ -69,9 +85,9 @@ gulp.task('scss-lint', function(){
 
 gulp.task('ci',['scss-lint','compile-scss','compile-handlebars']);
 
-gulp.task('default',['compile-scss','compile-handlebars','browser-sync'], function(){
-  gulp.watch(["./src/*.scss","./test/scss/*.scss"],["compile-scss"]);
-  gulp.watch(["./test/**/*.hbs","./test/data.json"],["compile-handlebars"]);
+gulp.task('default',['todo','compile-scss','compile-handlebars','browser-sync'], function(){
+  gulp.watch(["./src/**/*.scss","./test/scss/**/*.scss"],["todo","compile-scss"]);
+  gulp.watch(["./test/**/*.hbs","./test/data.json"],["todo","compile-handlebars"]);
   gulp.watch("./build/**/*.html").on('change',reload);
   gulp.watch("./build/css/*.css").on('change',reload);
 });

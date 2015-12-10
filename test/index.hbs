@@ -8,42 +8,43 @@
 
   </head>
   <body>
-    <h1>WVU Button Tests</h1>
-    <div class="button-column">
-      <h2>Buttons</h2>
-      <div class="wvu-test-span">
-        {{#wvu_buttons}}
-          <a class="wvu-button {{.}}">Button</a>
-        {{/wvu_buttons}}
+    <div class="container">
+      <h1>WVU Button Tests</h1>
+      <div class="button-column">
+        <h2>Buttons</h2>
+        <div class="wvu-test-span">
+          {{#wvu_buttons}}
+            <a class="wvu-button {{.}}">Button</a>
+          {{/wvu_buttons}}
+        </div>
+
+        {{#wvu_variables.colors}}
+        <h4>{{.}}</h4>
+        <div class="wvu-u-{{.}} background wvu-test-span">
+          {{#../wvu_buttons}}
+            <a class="wvu-button {{.}}">Button</a>
+          {{/../wvu_buttons}}
+        </div>
+        {{/wvu_variables.colors}}
       </div>
 
-      {{#wvu_variables.colors}}
-      <h4>{{.}}</h4>
-      <div class="wvu-u-{{.}} background wvu-test-span">
-        {{#../wvu_buttons}}
-          <a class="wvu-button {{.}}">Button</a>
-        {{/../wvu_buttons}}
+      <div class="button-column">
+        <h2> Button Fills</h2>
+        <div class="wvu-test-span">
+          {{#wvu_buttons}}
+            <a class="wvu-button {{.}}-fill">Button</a>
+          {{/wvu_buttons}}
+        </div>
+
+        {{#wvu_variables.colors}}
+        <h4>{{.}}</h4>
+        <div class="wvu-u-{{.}} background wvu-test-span">
+          {{#../wvu_buttons}}
+            <a class="wvu-button {{.}}-fill">Button</a>
+          {{/../wvu_buttons}}
+        </div>
+        {{/wvu_variables.colors}}
       </div>
-      {{/wvu_variables.colors}}
     </div>
-
-    <div class="button-column">
-      <h2> Button Fills</h2>
-      <div class="wvu-test-span">
-        {{#wvu_buttons}}
-          <a class="wvu-button {{.}}-fill">Button</a>
-        {{/wvu_buttons}}
-      </div>
-
-      {{#wvu_variables.colors}}
-      <h4>{{.}}</h4>
-      <div class="wvu-u-{{.}} background wvu-test-span">
-        {{#../wvu_buttons}}
-          <a class="wvu-button {{.}}-fill">Button</a>
-        {{/../wvu_buttons}}
-      </div>
-      {{/wvu_variables.colors}}
-    </div>
-
   </body>
 </html>
