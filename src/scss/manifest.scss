@@ -16,6 +16,9 @@
 @import './bower_components/wvu-utilities-variables/src/scss/wvu-variables-overrides';
 
 // wvu-utilities-typography
+@import './bower_components/wvu-utilities-typography/src/scss/wvu-typography-variables';
+@import './bower_components/wvu-utilities-typography/src/scss/wvu-typography-overrides';
+@import './bower_components/wvu-utilities-typography/src/scss/wvu-typography-mixins';
 @import './bower_components/wvu-utilities-typography/src/scss/wvu-typography';
 
 // wvu-utiltities-colors

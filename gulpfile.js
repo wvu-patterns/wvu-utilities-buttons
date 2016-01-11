@@ -39,13 +39,13 @@ gulp.task('todo', function(){
   .pipe(gulp.dest('./'));
 });
 
-gulp.task('compile-scss', function(){
+gulp.task('compile-scss', ['scss-lint'], function(){
   return gulp.src([
       './test/scss/styles.scss'
     ])
     .pipe(sourcemaps.init())
     .pipe(sass({
-      includePaths: ['scss'],
+      includePaths: ['scss','./bower_components/support-for/sass'],
       outputStyle: 'expanded'
     }))
     .pipe(prefix("last 1 version", "> 1%", "ie 8", "ie 7", { cascade: true }))
@@ -56,7 +56,7 @@ gulp.task('compile-scss', function(){
     .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('compile-handlebars', function () {
+gulp.task('build', ['todo','compile-scss'], function () {
 
   var templateData = JSON.parse(fs.readFileSync('./data/_wvu-buttons.json'));
 
@@ -83,11 +83,12 @@ gulp.task('scss-lint', function(){
     .pipe(scsslint.failReporter());
 });
 
-gulp.task('ci',['scss-lint','compile-scss','compile-handlebars']);
+gulp.task('ci',['build']);
 
-gulp.task('default',['todo','compile-scss','compile-handlebars','browser-sync'], function(){
-  gulp.watch(["./src/**/*.scss","./test/scss/**/*.scss"],["todo","compile-scss"]);
-  gulp.watch(["./test/**/*.hbs","./test/data.json"],["todo","compile-handlebars"]);
+gulp.task('default',['build','browser-sync'], function(){
+  gulp.watch(["./src/**/*.scss","./test/scss/**/*.scss"],['build']);
+  gulp.watch(["./test/**/*.hbs","./test/data.json"],['build']);
   gulp.watch("./build/**/*.html").on('change',reload);
   gulp.watch("./build/css/*.css").on('change',reload);
+  gulp.watch(['./src/haml/**/*.haml','./src/cleanslate/**/*.html'], ['todo']);
 });
